@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/lorem-ipsum', 'PageController@lorem_ipsum');
+Route::get('/user-generator', 'PageController@user_generator');
