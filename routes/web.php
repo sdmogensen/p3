@@ -15,5 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lorem-ipsum', 'PageController@lorem_ipsum');
-Route::get('/user-generator', 'PageController@user_generator');
+Route::get('/lorem-ipsum', 'PageController@getLoremIpsum');
+Route::post('/lorem-ipsum', 'PageController@postLoremIpsum');
+Route::get('/user-generator', 'PageController@userGenerator');
+Route::get('/practice', 'PracticeController@practice');

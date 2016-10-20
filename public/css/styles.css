@@ -3,3 +3,28 @@ body {
     color: #444;
     font-family: Geneva;
 }
+
+label {
+    font-weight: bold;
+    font-size:14pt
+}
+
+.input
+    {
+     font-size:14pt;
+     height:30px;
+     width:40px;
+    }
+
+.button {
+    background: black;
+    color: whitesmoke;
+    border: none;
+    padding: 6px 10px;
+    font-size: 100%;
+    border-radius: 10px;
+}
+
+.error {
+    color: red;
+}
