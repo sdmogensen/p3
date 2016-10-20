@@ -2,11 +2,13 @@ body {
     background: whitesmoke;
     color: #444;
     font-family: Geneva;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
-label {
+.strong {
     font-weight: bold;
-    font-size:14pt
+    font-size:14pt;
 }
 
 .input
@@ -23,6 +25,17 @@ label {
     padding: 6px 10px;
     font-size: 100%;
     border-radius: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 13pt;
+    margin-top:15px;
+}
+
+.profile {
+    font-style: italic;
+    font-size: 11pt;
 }
 
 .error {
