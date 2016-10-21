@@ -44,21 +44,63 @@ class PageController extends Controller
         $loremIpsum = new LoremIpsum;
         $datestart = strtotime('1920-1-1');
         $dateend = strtotime('2000-12-31');
-        $text = '';
+        $users = '';
 
         for ($i = 0; $i < $numberOfUsers; $i++) {
-            $text .= '<div class=\'name\'>'.$nameGenerator->getName().'</div>';
+            $users .= '<div class=\'name\'>'.$nameGenerator->getName().'</div>';
             if ($birthdate) {
-                $text .= '<div class=\'date\'>'.date('Y-m-d', mt_rand($datestart, $dateend)).'</div>';
+                $users .= '<div class=\'date\'>'.date('Y-m-d', mt_rand($datestart, $dateend)).'</div>';
             }
             if ($profile) {
-            $text .= '<div class=\'profile\'>'.$loremIpsum->sentence().'</div>';
+            $users .= '<div class=\'profile\'>'.$loremIpsum->sentence().'</div>';
             }
         }
-        //return redirect('/user-generator')->withInput();
-        return view('userGenerator', compact('text', 'numberOfUsers', 'birthdate', 'profile'));
+        return view('userGenerator', compact('users', 'numberOfUsers', 'birthdate', 'profile'));
     }
 
+    public function getPasswordGenerator()
+    {
+        return view('passwordGenerator');
+    }
 
-    //echo $generator->getName();
+    public function postPasswordGenerator(Request $request)
+    {
+        $this->validate($request, [
+            'numberOfWords' => 'required|numeric|min:1|max:9',
+        ]);
+
+        $numberOfWords = $request->input('numberOfWords');
+        $number = $request->input('number');
+        $symbol = $request->input('symbol');
+        $file = fopen("words", "r");
+
+        $words = [];
+        $i = 0;
+        while (($data = fgetcsv($file)) !== false) {
+            $words[$i] = $data[0];
+            $i++;
+        }
+        fclose($file);
+
+        $password = '<p class=\'password\'>';
+        $wordCount = count($words);
+        for ($i = 0; $i < $numberOfWords; $i++) {
+            $password .= $words[mt_rand(0, $wordCount - 1)];
+            if ($i < $numberOfWords - 1) {
+                $password .= '-';
+            }
+        }
+        if ($number) {
+            $password .= mt_rand(0,9);
+        }
+        if ($symbol) {
+            $symbols = [ '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
+            '+', '=', ';', ':', '<', '>', '?', '/', '\\', '|' ];
+            $password .= $symbols[mt_rand(0, count($symbols) - 1)];
+        }
+        $password .= '</p>';
+
+        return view('passwordGenerator', compact('password', 'numberOfWords', 'number', 'symbol'));
+    }
+
 }

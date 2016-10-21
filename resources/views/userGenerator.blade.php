@@ -25,6 +25,6 @@
         @endforeach
     @endif
 
-    {!! $text  or '' !!}
+    {!! $users  or '' !!}
 
 @stop
