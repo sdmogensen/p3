@@ -13,4 +13,4 @@
     <a href='/password-generator'><h2>XKCD Password Generator</h2></a>
     <p>Generate an XKCD style password.</p>
 
-@stop
+@endsection

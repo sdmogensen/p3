@@ -7,7 +7,7 @@
         {{ csrf_field() }}
         <label class='strong' for='paragraphs'>How many paragraphs?</label>
 		<input type='text' class='input' name='numberOfParagraphs'
-            value='{{ $numberOfParagraphs or '' }}' maxlength='2'
+            value='{{ old('numberOfParagraphs') }}' maxlength='2'
             id='paragraphs' autofocus> (Max: 99)
         <br><br>
         <input type='submit' class='button' value='Generate Lorem Ipsum'>
@@ -19,5 +19,5 @@
         @endforeach
     @endif
 
-    {!! $text  or '' !!}
-@stop
+    {!! $text !!}
+@endsection

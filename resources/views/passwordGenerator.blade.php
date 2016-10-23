@@ -7,13 +7,13 @@
         {{ csrf_field() }}
         <label class='strong' for='words'> Number of words </label>
         <input type='text' class='input' name='numberOfWords'
-            value='{{ $numberOfWords or '' }}' maxlength='1'
+            value='{{ old('numberOfWords') }}' maxlength='1'
             id='words' autofocus> (Max: 9)
         <br>
-        <input type='checkbox' name= 'number' id='number' {{ @$number? 'checked' : '' }}>
+        <input type='checkbox' name= 'number' id='number' {{ old('number') ? 'checked' : '' }}>
         <label for='number'>Add a number?</label>
         <br>
-        <input type='checkbox' name= 'symbol' id='symbol' {{ @$symbol? 'checked' : '' }}>
+        <input type='checkbox' name= 'symbol' id='symbol' {{ old('symbol') ? 'checked' : '' }}>
         <label for='symbol'>Add a symbol?</label>
         <br><br>
         <input type='submit' class='button' value='Generate Password'>
@@ -24,7 +24,7 @@
             <p class='error'>{{ $error }}</p>
         @endforeach
     @endif
-    
-    {!! $password or '' !!}
 
-@stop
+    {!! $password !!}
+
+@endsection

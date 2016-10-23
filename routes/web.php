@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lorem-ipsum', 'PageController@getLoremIpsum');
-Route::post('/lorem-ipsum', 'PageController@postLoremIpsum');
-Route::get('/user-generator', 'PageController@getUserGenerator');
-Route::post('/user-generator', 'PageController@postUserGenerator');
-Route::get('/password-generator', 'PageController@getPasswordGenerator');
-Route::post('/password-generator', 'PageController@postPasswordGenerator');
+Route::get('/lorem-ipsum', 'LoremIpsumController@getText');
+Route::post('/lorem-ipsum', 'LoremIpsumController@showText');
+Route::get('/user-generator', 'UserGeneratorController@getUsers');
+Route::post('/user-generator', 'UserGeneratorController@showUsers');
+Route::get('/password-generator', 'PasswordGeneratorController@getPassword');
+Route::post('/password-generator', 'PasswordGeneratorController@showPassword');
