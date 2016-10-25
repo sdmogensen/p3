@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Route::get('/lorem-ipsum', 'LoremIpsumController@getText');
 Route::post('/lorem-ipsum', 'LoremIpsumController@showText');
+
 Route::get('/user-generator', 'UserGeneratorController@getUsers');
 Route::post('/user-generator', 'UserGeneratorController@showUsers');
+
 Route::get('/password-generator', 'PasswordGeneratorController@getPassword');
 Route::post('/password-generator', 'PasswordGeneratorController@showPassword');

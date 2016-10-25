@@ -39,6 +39,10 @@ body {
     font-size: 11pt;
 }
 
+.company {
+    font-style: italic;
+}
+
 .password {
     font-family: Helvetica;
     font-size: 18pt;

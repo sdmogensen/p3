@@ -22,8 +22,9 @@ class PasswordGeneratorController extends Controller
         $numberOfWords = $request->input('numberOfWords');
         $number = $request->input('number');
         $symbol = $request->input('symbol');
-        $file = fopen('words', 'r');
 
+        # open and load the words csv file
+        $file = fopen('words', 'r');
         $words = [];
         $i = 0;
         while (($data = fgetcsv($file)) !== false) {

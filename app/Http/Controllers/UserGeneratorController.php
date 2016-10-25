@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Nubs\RandomNameGenerator\Alliteration;
 use joshtronic\LoremIpsum;
+use Faker\Factory as Faker;
 
 class UserGeneratorController extends Controller
 {
@@ -22,19 +23,45 @@ class UserGeneratorController extends Controller
         ]);
 
         $numberOfUsers = $request->input('numberOfUsers');
+        $company = $request->input('company');
         $birthdate = $request->input('birthdate');
+        $address = $request->input('address');
+        $phoneNumber = $request->input('phoneNumber');
+        $email = $request->input('email');
         $profile = $request->input('profile');
+
         $nameGenerator = new Alliteration;
-        $loremIpsum = new LoremIpsum;
-        $datestart = strtotime('1920-1-1');
-        $dateend = strtotime('2000-12-31');
+
+        if ($birthdate) {
+            $datestart = strtotime('1920-1-1');
+            $dateend = strtotime('2000-12-31');
+        }
+        if ($profile) {
+            $loremIpsum = new LoremIpsum;
+        }
+        if ($company || $address || $phoneNumber || $email) {
+            $faker = Faker::create();
+        }
 
         $users = '';
 
         for ($i = 0; $i < $numberOfUsers; $i++) {
-            $users .= '<div class=\'name\'>'.$nameGenerator->getName().'</div>';
+            $name = $nameGenerator->getName();
+            $users .= '<div class=\'name\'>'.$name.'</div>';
+            if ($company) {
+                $users .= '<div class=\'company\'>'.$faker->company.'</div>';
+            }
             if ($birthdate) {
-                $users .= '<div class=\'date\'>'.date('Y-m-d', mt_rand($datestart, $dateend)).'</div>';
+                $users .= '<div>DOB: '.date('Y-m-d', mt_rand($datestart, $dateend)).'</div>';
+            }
+            if ($address) {
+                $users .= '<div>'.$faker->address.'</div>';
+            }
+            if ($phoneNumber) {
+                $users .= '<div>'.$faker->phoneNumber.'</div>';
+            }
+            if ($email) {
+                $users .= '<div>'.str_replace(' ', '.', strtolower($name)).'@'.$faker->domainName.'</div>';
             }
             if ($profile) {
             $users .= '<div class=\'profile\'>'.$loremIpsum->sentence().'</div>';

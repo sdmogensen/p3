@@ -10,11 +10,25 @@
             value='{{ old('numberOfUsers') }}' maxlength='2'
             id='users' autofocus> (Max: 99)
         <br>
+        Include:
+        <br>
+        <input type='checkbox' name= 'company' id='company' {{ old('company') ? 'checked' : '' }}>
+        <label for='company'>Company name</label>
+        <br>
         <input type='checkbox' name= 'birthdate' id='birthdate' {{ old('birthdate') ? 'checked' : '' }}>
-        <label for='birthdate'>Include birthdate?</label>
+        <label for='birthdate'>Birthdate</label>
+        <br>
+        <input type='checkbox' name= 'address' id='address' {{ old('address') ? 'checked' : '' }}>
+        <label for='address'>Address</label>
+        <br>
+        <input type='checkbox' name= 'phoneNumber' id='phoneNumber' {{ old('phoneNumber') ? 'checked' : '' }}>
+        <label for='phoneNumber'>Phone number</label>
+        <br>
+        <input type='checkbox' name= 'email' id='email' {{ old('email') ? 'checked' : '' }}>
+        <label for='email'>Email</label>
         <br>
         <input type='checkbox' name= 'profile' id='profile' {{ old('profile') ? 'checked' : '' }}>
-        <label for='profile'>Include profile?</label>
+        <label for='profile'>Profile</label>
         <br><br>
         <input type='submit' class='button' value='Generate Random Users'>
     </form>
