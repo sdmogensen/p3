@@ -58,7 +58,7 @@ class UserGeneratorController extends Controller
                 $users .= '<div>'.$faker->address.'</div>';
             }
             if ($phoneNumber) {
-                $users .= '<div>'.$faker->phoneNumber.'</div>';
+                $users .= '<div>'.$faker->numerify('###-###-####').'</div>';
             }
             if ($email) {
                 $users .= '<div>'.str_replace(' ', '.', strtolower($name)).'@'.$faker->domainName.'</div>';

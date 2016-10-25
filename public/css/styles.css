@@ -12,6 +12,11 @@ body {
     font-size:14pt;
 }
 
+.stronger {
+    font-weight: bold;
+    font-size:17pt;
+}
+
 .input
     {
      font-size:14pt;
@@ -49,6 +54,11 @@ body {
     font-weight: bold;
     color: black;
     margin-left: 2%;
+}
+
+.octal {
+    font-weight: bold;
+    font-size: 30pt;
 }
 
 .error {
