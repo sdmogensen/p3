@@ -5,23 +5,23 @@
     <h1>XKCD Password Generator</h1>
     <form method='POST' action='/password-generator'>
         {{ csrf_field() }}
-        <label class='strong' for='words'> Number of words </label>
-        <input type='text' class='input' name='numberOfWords'
-            value='{{ old('numberOfWords') }}' maxlength='1'
-            id='words' autofocus> (Max: 9)
+        <label class='strong'>Number of words
+            <input type='text' class='input' name='numberOfWords'
+            value='{{ old('numberOfWords') }}' maxlength='1' autofocus>
+        </label>(Max: 9)
         <br>
-        <input type='checkbox' name= 'number' id='number' {{ old('number') ? 'checked' : '' }}>
-        <label for='number'>Add a number?</label>
-        <br>
-        <input type='checkbox' name= 'symbol' id='symbol' {{ old('symbol') ? 'checked' : '' }}>
-        <label for='symbol'>Add a symbol?</label>
-        <br><br>
+        <label>
+            <input type='checkbox' name= 'number' {{ old('number') ? 'checked' : '' }}>Add a number?
+        </label><br>
+        <label>
+            <input type='checkbox' name= 'symbol' {{ old('symbol') ? 'checked' : '' }}>Add a symbol?
+        </label><br><br>
         <input type='submit' class='button' value='Generate Password'>
     </form>
 
     @if(count($errors) > 0)
         @foreach ($errors->all() as $error)
-            <p class='error'>{{ $error }}</p>
+            <div class='error'>{{ $error }}</div>
         @endforeach
     @endif
 

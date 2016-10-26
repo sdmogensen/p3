@@ -96,8 +96,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'octalCode' => [
+            'regex' => 'The :attribute must use the digits 0-7.',
         ],
     ],
 

@@ -24,8 +24,8 @@ Route::post('/user-generator', 'UserGeneratorController@showUsers');
 Route::get('/password-generator', 'PasswordGeneratorController@getPassword');
 Route::post('/password-generator', 'PasswordGeneratorController@showPassword');
 
-Route::get('/permissions-calculator', 'PermissionsCalculatorController@getPermissionBits');
-Route::post('/permissions-calculator', 'PermissionsCalculatorController@showOctalNotation');
+Route::get('/permissions-calculator', 'PermissionsCalculatorController@getBits');
+Route::post('/permissions-calculator', 'PermissionsCalculatorController@showOctal');
 
-Route::get('/permissions-calculator/decode', 'PermissionsCalculatorController@getOctalNotation');
-Route::post('/permissions-calculator/decode', 'PermissionsCalculatorController@showPermissionBits');
+Route::get('/permissions-calculator/decode', 'PermissionsCalculatorController@getOctal');
+Route::post('/permissions-calculator/decode', 'PermissionsCalculatorController@showBits');

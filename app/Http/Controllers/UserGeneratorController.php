@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use Nubs\RandomNameGenerator\Alliteration;
+use Nubs\RandomNameGenerator\Alliteration as NameGenerator;
 use joshtronic\LoremIpsum;
 use Faker\Factory as Faker;
 
@@ -30,8 +30,7 @@ class UserGeneratorController extends Controller
         $email = $request->input('email');
         $profile = $request->input('profile');
 
-        $nameGenerator = new Alliteration;
-
+        $nameGenerator = new NameGenerator;
         if ($birthdate) {
             $datestart = strtotime('1920-1-1');
             $dateend = strtotime('2000-12-31');
@@ -44,7 +43,6 @@ class UserGeneratorController extends Controller
         }
 
         $users = '';
-
         for ($i = 0; $i < $numberOfUsers; $i++) {
             $name = $nameGenerator->getName();
             $users .= '<div class=\'name\'>'.$name.'</div>';
