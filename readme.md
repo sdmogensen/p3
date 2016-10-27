@@ -34,9 +34,17 @@ There are 4 parts to this project:
    special file permissions.
 
 ## Demo
-<http://screencast.com/...>
+<http://screencast.com/t/opejfBqakKl>
 
 ## Packages used:
-* joshtronic/php-loremipsum: <https://packagist.org/packages/joshtronic/php-loremipsum>
-* nubs/random-name-generator <https://packagist.org/packages/nubs/random-name-generator>
-* fzaninotto/faker <https://packagist.org/packages/fzaninotto/faker>
+* joshtronic/php-loremipsum:
+
+   <https://packagist.org/packages/joshtronic/php-loremipsum>
+
+* nubs/random-name-generator:
+
+   <https://packagist.org/packages/nubs/random-name-generator>
+
+* fzaninotto/faker:
+
+   <https://packagist.org/packages/fzaninotto/faker>
