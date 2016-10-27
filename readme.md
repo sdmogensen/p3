@@ -1,27 +1,42 @@
-# Laravel PHP Framework
+# P3: Developer's Best Friend
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Live URL
+<http://p3.mogensen.site/>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Description
+There are 4 parts to this project:
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+1. A lorem ipsum generator
 
-## Official Documentation
+   Generates paragraphs of lorem ipsum text.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+2. A Random User Generator
 
-## Contributing
+   Creates random user data. In addition to a random name, the following random
+   data can be included for each generated user:
+  * A company name
+  * A birthdate
+  * An address
+  * A phone number
+  * An email address
+  * A short lorem ipsum profile
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+3. A password generator
 
-## Security Vulnerabilities
+   Creates a randomized password that is composed of a series of common English words.
+   The words are randomly drawn from the 4000 most common English words, and a random
+   number and/or random symbol can be added to the end of the generated password.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+4. A UNIX permissions calculator
 
-## License
+   Translates between the octal code representation of the UNIX permission bits and
+   their meaning in terms of the user, group and other permissions, as well as the
+   special file permissions.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+## Demo
+<http://screencast.com/...>
+
+## Packages used:
+* joshtronic/php-loremipsum: <https://packagist.org/packages/joshtronic/php-loremipsum>
+* nubs/random-name-generator <https://packagist.org/packages/nubs/random-name-generator>
+* fzaninotto/faker <https://packagist.org/packages/fzaninotto/faker>

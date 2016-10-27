@@ -4,8 +4,11 @@
     <a href='/'>&larr; Back</a>
     <h1>UNIX Permissions Calculator</h1>
     <table>
-        <tr><a href='/permissions-calculator' class='stronger'>Encode Octal</a></tr>&nbsp&nbsp
-        <tr><a href='/permissions-calculator/decode' class='stronger'>Decode Octal</a></tr>
+        <tr>
+            <td><a href='/permissions-calculator' class='stronger'>Encode Octal</a></td>
+            <td>&nbsp;</td>
+            <td><a href='/permissions-calculator/decode' class='stronger'>Decode Octal</a></td>
+        </tr>
     </table><br>
     <div class='stronger'>Permission bits</div>
     <form method='POST' action='/permissions-calculator'>

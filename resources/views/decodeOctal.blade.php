@@ -4,8 +4,11 @@
     <a href='/'>&larr; Back</a>
     <h1>UNIX Permissions Calculator</h1>
     <table>
-        <tr><a href='/permissions-calculator' class='stronger'>Encode Octal</a></tr>&nbsp&nbsp
-        <tr><a href='/permissions-calculator/decode' class='stronger'>Decode Octal</a></tr>
+        <tr>
+            <td><a href='/permissions-calculator' class='stronger'>Encode Octal</a></td>
+            <td>&nbsp;</td>
+            <td><a href='/permissions-calculator/decode' class='stronger'>Decode Octal</a></td>
+        </tr>
     </table><br>
     <div class='stronger'>Permissions (in octal notation)</div>
     <form method='POST' action='/permissions-calculator/decode'>
@@ -22,12 +25,12 @@
     {!! $bitErrors !!}<br>
 
     @if($bits)
-        <table border='2' class='table'>
+        <table class='table'>
             <tr>
-                <td class='strong'>Special</td>
-                <td class='strong'>User</td>
-                <td class='strong'>Group</td>
-                <td class='strong'>Other</td>
+                <td class='tableHeader'>Special</td>
+                <td class='tableHeader'>User</td>
+                <td class='tableHeader'>Group</td>
+                <td class='tableHeader'>Other</td>
             </tr>
             <tr>
                 {!! $bits[0] ? '<td class=\'green\'>setuid is set</td>' : '<td class=\'red\'>setuid is unset</td>' !!}
@@ -49,5 +52,5 @@
             </tr>
         </table>
     @endif
-    
+
 @endsection
